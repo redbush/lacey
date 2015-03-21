@@ -26,6 +26,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'haml-rails', '~> 0.9'
 gem 'devise', '~> 3.4.1'
 gem 'rails_admin', '~> 0.6.7'
+gem 'factory_girl_rails', '~> 4.5.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

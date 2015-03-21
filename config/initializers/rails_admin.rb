@@ -46,4 +46,11 @@ RailsAdmin.config do |config|
       field :password_confirmation
     end
   end
+
+  config.model 'SiteProperty' do
+    label 'Site Properties'
+    list do
+      field :key
+    end
+  end
 end

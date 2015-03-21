@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150314063445) do
+ActiveRecord::Schema.define(version: 20150321172848) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -33,5 +33,14 @@ ActiveRecord::Schema.define(version: 20150314063445) do
 
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
+
+  create_table "site_properties", force: :cascade do |t|
+    t.string   "key",        limit: 255,   null: false
+    t.text     "value",      limit: 65535, null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  add_index "site_properties", ["key"], name: "index_site_properties_on_key", unique: true, using: :btree
 
 end
