@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :admins
+  devise_for :admins, path: 'admin', path_names: { sign_in: 'login', sign_out: 'logout' }
+
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'home', to: 'pages#home', as: :home
 
   # The priority is based upon order of creation: first created -> highest priority.
