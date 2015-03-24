@@ -1,2 +1,8 @@
-%h1 Pages#home
-%p Find me in app/views/pages/home.html.haml
+- content_for :page_title do
+  %title Lacey Home Page
+- content_for :keywords do
+  %meta{name: 'keywords', content: ''}
+- content_for :description do
+  %meta{name: 'description', content: ''}
+
+%h1 home page

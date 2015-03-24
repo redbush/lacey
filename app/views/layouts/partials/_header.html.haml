@@ -1,0 +1,17 @@
+.navbar.navbar-default.navbar-fixed-top
+  .container-fluid
+    .navbar-header
+      %button{type: 'button', class: 'navbar-toggle collapsed', data: {toggle: 'collapse', target: '#bs-example-navbar-collapse-1'}}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a{href: '#', class: 'navbar-brand'} Lacey Laughter
+    .collapse.navbar-collapse#bs-example-navbar-collapse-1
+      %ul.nav.navbar-nav.navbar-right
+        %li
+          %a{href: '#'} Link
+        - if admin_signed_in?
+          %li= link_to 'Admin Panel', rails_admin.dashboard_path
+
+
