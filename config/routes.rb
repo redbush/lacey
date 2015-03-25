@@ -1,14 +1,19 @@
 Rails.application.routes.draw do
-  devise_for :admins, path: 'admin', path_names: { sign_in: 'login', sign_out: 'logout' }
+  resources :projects, only: [:show]
 
+  devise_for :admins, path: 'admin', path_names: { sign_in: 'login', sign_out: 'logout' }
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
   get 'home', to: 'pages#home', as: :home
+  get 'not_found', to: 'error#not_found', as: :not_found
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'pages#home'
+
+  get '*path', to: 'error#not_found'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
