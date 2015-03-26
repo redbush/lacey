@@ -7,3 +7,4 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Admin.create(email: 'laceylaughter@gmail.com', password: 'lacey321')
+SiteProperty.create(key: 'BASIC_AUTH', value: '{"username":"lacey","password":"sunshine"}')

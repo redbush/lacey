@@ -38,6 +38,7 @@ body {
 
 #page {
   background: #ffffff;
+  padding-bottom: 30px;
 }
 
 #intro {
@@ -68,6 +69,10 @@ body {
   font-size: 26px;
 }
 
+#contact-title {
+  margin-bottom: 0px;
+}
+
 .project  {
   background: #2E2F30;
   margin-bottom: 30px;
@@ -96,8 +101,16 @@ body {
   }
 }
 
+#about {
+  padding: 40px 0 40px 0;
+  p {
+    margin-bottom: 30px;
+  }
+}
+
 #footer {
   color: #ffffff;
+  min-height: 200px;
 }
 
 @media (max-width: 768px) {
