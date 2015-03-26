@@ -1,8 +1,33 @@
 - content_for :page_title do
-  %title Lacey Home Page
+  %title Lacey Laughter UX Designer & Researcher
 - content_for :keywords do
   %meta{name: 'keywords', content: ''}
 - content_for :description do
   %meta{name: 'description', content: ''}
 
-%h1 home page
+
+#intro.clearfix
+  .col-md-8.col-md-offset-2
+    .container-fluid
+      #job-title UX Designer & Researcher
+      #slogan Producing Experiences Users Love
+      #text I love creating engaging, efficient experiences for users by focusing on the user's needs and identifying the best ways to make complex interactions as simple as possible while ensuring that business needs are met.
+
+#work-title.title
+  .container-fluid
+    WORK
+
+#projects
+  .container-fluid
+    - @projects.in_groups_of(2, false) do |project_row|
+      .row
+        - for project in project_row
+          = render project
+
+#about-title.title
+  .container-fluid
+    ABOUT
+
+#contact-title.title
+  .container-fluid
+    CONTACT

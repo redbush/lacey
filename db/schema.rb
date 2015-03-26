@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150324232525) do
+ActiveRecord::Schema.define(version: 20150325023309) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -35,9 +35,16 @@ ActiveRecord::Schema.define(version: 20150324232525) do
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
 
   create_table "projects", force: :cascade do |t|
-    t.string   "company",    limit: 255, null: false
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "company",                    limit: 255,               null: false
+    t.text     "brief_description",          limit: 65535,             null: false
+    t.text     "tag_line",                   limit: 65535,             null: false
+    t.integer  "order",                      limit: 4,     default: 1
+    t.datetime "created_at",                                           null: false
+    t.datetime "updated_at",                                           null: false
+    t.string   "company_image_file_name",    limit: 255
+    t.string   "company_image_content_type", limit: 255
+    t.integer  "company_image_file_size",    limit: 4
+    t.datetime "company_image_updated_at"
   end
 
   create_table "site_properties", force: :cascade do |t|

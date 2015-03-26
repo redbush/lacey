@@ -14,3 +14,13 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require_tree .
+
+$(document).ready(function(){
+    $('.project').mouseover(function () {
+        $(this).find('.image').fadeTo( "fast", 0 );
+        $(this).find('.overlay').fadeIn( "fast" );
+    }).mouseout(function () {
+        $(this).find('.image').fadeTo( "fast", 1);
+        $(this).find('.overlay').fadeOut( "fast" );
+    });
+});

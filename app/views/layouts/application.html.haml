@@ -10,8 +10,9 @@
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
     = csrf_meta_tags
-  %body
+  %body{data: {spy: 'scroll', target: '#navbar-collapse'}}
     = render 'layouts/partials/header'
-    = render 'layouts/partials/flash'
-    = yield
+    #page
+      = render 'layouts/partials/flash'
+      = yield
     = render 'layouts/partials/footer'
