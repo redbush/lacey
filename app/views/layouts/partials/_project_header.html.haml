@@ -1,0 +1,18 @@
+.navbar.navbar-default.navbar-fixed-top
+  .container-fluid
+    .navbar-header
+      %button{type: 'button', class: 'navbar-toggle collapsed', data: {toggle: 'collapse', target: '#navbar-collapse'}}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      = link_to 'Lacey Laughter ', home_path, class: 'navbar-brand'
+    .collapse.navbar-collapse#navbar-collapse
+      %ul.nav.navbar-nav.navbar-right
+        %li= link_to 'WORK', home_path(anchor: 'work-title')
+        %li= link_to 'ABOUT', home_path(anchor: 'about-title')
+        %li= link_to 'CONTACT', home_path(anchor: 'contact-title')
+        - if admin_signed_in?
+          %li= link_to 'ADMIN', rails_admin.dashboard_path
+
+

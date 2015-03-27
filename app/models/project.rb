@@ -1,5 +1,5 @@
 class Project < ActiveRecord::Base
-  validates_presence_of :company, :tag_line, :brief_description
+  validates_presence_of :company, :brief_description, :website_type, :role, :challenge
   validates_inclusion_of :order, in: 1..999
 
   has_attached_file :company_image,

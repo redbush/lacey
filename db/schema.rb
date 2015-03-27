@@ -37,7 +37,10 @@ ActiveRecord::Schema.define(version: 20150325023309) do
   create_table "projects", force: :cascade do |t|
     t.string   "company",                    limit: 255,               null: false
     t.text     "brief_description",          limit: 65535,             null: false
-    t.text     "tag_line",                   limit: 65535,             null: false
+    t.string   "website_type",               limit: 255,               null: false
+    t.string   "role",                       limit: 255,               null: false
+    t.text     "challenge",                  limit: 65535,             null: false
+    t.string   "website",                    limit: 255
     t.integer  "order",                      limit: 4,     default: 1
     t.datetime "created_at",                                           null: false
     t.datetime "updated_at",                                           null: false

@@ -1,5 +1,22 @@
-%p#notice= notice
+- content_for :page_title do
+  %title
+    = @project.company
+    | Lacey Laughter UX Designer & Researcher
+- content_for :keywords do
+  %meta{name: 'keywords', content: ''}
+- content_for :description do
+  %meta{name: 'description', content: ''}
 
-%p
-  %b Company:
-  = @project.company
+#project-overview
+  .container-fluid
+    .row
+      .col-md-8.col-md-offset-2
+        #company= @project.company
+        #website-type= @project.website_type
+        #role
+          Role:
+          = @project.role
+        #challenge-title The Challenge
+        #challenge-content= @project.challenge
+
+#project-overview-divider

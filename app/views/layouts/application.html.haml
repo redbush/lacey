@@ -11,7 +11,10 @@
     = javascript_include_tag 'application'
     = csrf_meta_tags
   %body{data: {spy: 'scroll', target: '#navbar-collapse'}}
-    = render 'layouts/partials/header'
+    - if current_page?(home_path)
+      = render 'layouts/partials/header'
+    - else
+      = render 'layouts/partials/project_header'
     #page
       = render 'layouts/partials/flash'
       = yield
