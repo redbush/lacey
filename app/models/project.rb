@@ -10,6 +10,8 @@ class Project < ActiveRecord::Base
   validates_attachment_content_type :company_image, :content_type => ["image/jpeg", "image/gif", "image/png"]
   validates_attachment_presence :company_image
 
+  has_many :content_modules, dependent: :destroy
+
   scope :recent, -> { order(order: :asc).limit(6) }
 
   def s3_credentials

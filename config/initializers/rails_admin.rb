@@ -53,4 +53,8 @@ RailsAdmin.config do |config|
       field :key
     end
   end
+
+  config.model 'ContentModule' do
+    label 'Content Modules'
+  end
 end
