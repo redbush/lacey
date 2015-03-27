@@ -26,6 +26,8 @@ $font-size-base: 18px;
 // Scaffolding
 $body-bg: #32264B;
 $text-color: #666666;
+// Colors
+$brand-primary: #32264B;
 
 
 @import "bootstrap-sprockets";
@@ -69,14 +71,11 @@ body {
   font-size: 26px;
 }
 
-#contact-title {
-  margin-bottom: 0px;
-}
-
 .project  {
   background: #2E2F30;
   margin-bottom: 30px;
   position: relative;
+  border: 1px solid #2E2F30;
   .overlay {
     display: none;
     position: absolute;
@@ -108,9 +107,44 @@ body {
   }
 }
 
+#contact {
+  padding: 40px 0 40px 0;
+  #contact-text-1 {
+    font-weight: 900;
+    font-size: 36px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  #contact-text-2 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+}
+
+@mixin add_image_before($image_name) {
+    display: inline-block;
+    margin-bottom: 5px;
+    &:before {
+        content: url("#{$image_name}");
+        display: inline-block;
+        vertical-align: middle;
+        padding-right: 5px;
+    }
+}
+
+#email-link {
+    @include add_image_before("<%= asset_path 'email.png' %>")
+}
+
+#linkedin-link {
+    @include add_image_before("<%= asset_path 'linkedin.png' %>")
+}
+
 #footer {
-  color: #ffffff;
-  min-height: 200px;
+    color: #ffffff;
+    padding: 10px 0 10px 0;
+    text-align: center;
 }
 
 @media (max-width: 768px) {
