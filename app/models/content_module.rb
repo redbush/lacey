@@ -1,5 +1,5 @@
 class ContentModule < ActiveRecord::Base
-  validates_presence_of :title, :description
+  validates_presence_of :title, :description, :project_id
   validates_inclusion_of :order, in: 1..999
 
   belongs_to :project, :inverse_of => :content_modules

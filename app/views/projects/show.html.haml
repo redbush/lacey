@@ -22,6 +22,16 @@
 #project-overview-divider
 
 - @project.content_modules.each do |content_module|
-  %p= content_module.title
-  - content_module.photos.each do |photo|
-    = image_tag(photo.photo.url(:medium), class: 'img-responsive')
+  .content-module
+    .container-fluid
+      .row
+        .col-md-8.col-md-offset-2
+          .content-module-title= content_module.title
+          .content-module-description= content_module.description
+          - content_module.photos.each do |photo|
+            .content-module-photo
+              = image_tag(photo.photo.url(:medium), class: 'img-responsive')
+
+- if @project.website.present?
+  #project-website-link
+    = link_to 'View Website', @project.website, target: '_blank'

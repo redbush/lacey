@@ -54,6 +54,14 @@ RailsAdmin.config do |config|
     end
   end
 
+  config.model 'Project' do
+    label 'Projects'
+    list do
+      field :company
+      field :order
+    end
+  end
+
   config.model 'ContentModule' do
     label 'Content Modules'
     list do
@@ -63,6 +71,7 @@ RailsAdmin.config do |config|
           value.company
         end
       end
+      field :order
     end
     edit do
       field :project_id, :enum do
@@ -72,6 +81,16 @@ RailsAdmin.config do |config|
       end
       field :title
       field :description
+      field :order
+    end
+  end
+
+  config.model 'Photo' do
+    label 'Photos'
+    list do
+      field :photo
+      field :content_module
+      field :order
     end
   end
 end

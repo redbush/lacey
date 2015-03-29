@@ -1,4 +1,5 @@
 class Photo < ActiveRecord::Base
+  validates_presence_of :content_module_id
   validates_inclusion_of :order, in: 1..999
 
   has_attached_file :photo,
