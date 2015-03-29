@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150327171014) do
+ActiveRecord::Schema.define(version: 20150329012710) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -35,12 +35,27 @@ ActiveRecord::Schema.define(version: 20150327171014) do
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
 
   create_table "content_modules", force: :cascade do |t|
-    t.integer  "project_id",  limit: 4,     null: false
     t.string   "title",       limit: 255,   null: false
     t.text     "description", limit: 65535, null: false
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.integer  "project_id",  limit: 4,     null: false
   end
+
+  add_index "content_modules", ["project_id"], name: "index_content_modules_on_project_id", using: :btree
+
+  create_table "photos", force: :cascade do |t|
+    t.string   "photo_file_name",    limit: 255
+    t.string   "photo_content_type", limit: 255
+    t.integer  "photo_file_size",    limit: 4
+    t.datetime "photo_updated_at"
+    t.integer  "order",              limit: 4,   default: 1
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
+    t.integer  "content_module_id",  limit: 4,               null: false
+  end
+
+  add_index "photos", ["content_module_id"], name: "index_photos_on_content_module_id", using: :btree
 
   create_table "projects", force: :cascade do |t|
     t.string   "company",                    limit: 255,               null: false
