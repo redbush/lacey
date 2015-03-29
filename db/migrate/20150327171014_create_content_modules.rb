@@ -3,6 +3,7 @@ class CreateContentModules < ActiveRecord::Migration
     create_table :content_modules do |t|
       t.string :title, null: false
       t.text :description, null: false
+      t.integer :order, default: 1
 
       t.timestamps null: false
     end

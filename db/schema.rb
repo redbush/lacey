@@ -35,11 +35,12 @@ ActiveRecord::Schema.define(version: 20150329012710) do
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
 
   create_table "content_modules", force: :cascade do |t|
-    t.string   "title",       limit: 255,   null: false
-    t.text     "description", limit: 65535, null: false
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-    t.integer  "project_id",  limit: 4,     null: false
+    t.string   "title",       limit: 255,               null: false
+    t.text     "description", limit: 65535,             null: false
+    t.integer  "order",       limit: 4,     default: 1
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+    t.integer  "project_id",  limit: 4,                 null: false
   end
 
   add_index "content_modules", ["project_id"], name: "index_content_modules_on_project_id", using: :btree

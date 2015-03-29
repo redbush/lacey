@@ -20,3 +20,8 @@
         #challenge-content= @project.challenge
 
 #project-overview-divider
+
+- @project.content_modules.each do |content_module|
+  %p= content_module.title
+  - content_module.photos.each do |photo|
+    = image_tag(photo.photo.url(:medium), class: 'img-responsive')

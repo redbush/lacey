@@ -56,5 +56,22 @@ RailsAdmin.config do |config|
 
   config.model 'ContentModule' do
     label 'Content Modules'
+    list do
+      field :title
+      field :project do
+        pretty_value do # used in list view columns and show views, defaults to formatted_value for non-association fields
+          value.company
+        end
+      end
+    end
+    edit do
+      field :project_id, :enum do
+        enum_method do
+          :project_id_enum
+        end
+      end
+      field :title
+      field :description
+    end
   end
 end
