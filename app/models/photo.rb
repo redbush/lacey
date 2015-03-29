@@ -3,7 +3,7 @@ class Photo < ActiveRecord::Base
   validates_inclusion_of :order, in: 1..999
 
   has_attached_file :photo,
-                    :styles => { :medium => "1000x500>#", :thumb => "100x100#" },
+                    :styles => { :medium => "930", :thumb => "100x100#" },
                     :default_url => "/images/:style/missing.png",
                     :storage => :s3,
                     :s3_credentials => Proc.new{|a| a.instance.s3_credentials }
