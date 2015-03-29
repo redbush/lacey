@@ -1,9 +1,13 @@
 .col-xs-12.col-sm-6.col-md-6
-  .project.he-wrap
-    .image= image_tag(project.company_image.url(:medium), class: 'img-responsive')
-    .he-view
-      .overlay.a0{data: {animate: 'fadeIn'}}
-        .company= project.company
-        .brief-description= project.brief_description
-        .read-case-study
-          = link_to 'View Details', project, class: 'btn btn-sm btn-primary'
+  - if browser.mobile?
+    .project
+      .image= link_to image_tag(project.company_image.url(:medium), class: 'img-responsive'), project
+  - else
+    .project.he-wrap
+      .image= image_tag(project.company_image.url(:medium), class: 'img-responsive')
+      .he-view
+        .overlay.a0{data: {animate: 'fadeIn'}}
+          .company= project.company
+          .brief-description= project.brief_description
+          .read-case-study
+            = link_to 'View Details', project, class: 'btn btn-sm btn-primary'

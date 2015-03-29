@@ -28,6 +28,7 @@ gem 'factory_girl_rails', '~> 4.5.0'
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'paperclip', '~> 4.2'
 gem 'aws-sdk', '~> 1.5.7'
+gem 'browser', '~> 0.8.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
