@@ -28,10 +28,19 @@ $body-bg: #32264B;
 $text-color: #666666;
 // Colors
 $brand-primary: #32264B;
+// Buttons
+$btn-primary-bg: #ffffff;
+$btn-primary-color: #5D478B;
+// Components
+$border-radius-base: 0px;
+$border-radius-large: 0px;
+$border-radius-small: 0px;
 
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "hoverex-all";
+@import "templates";
 
 body {
   padding-top: 80px;
@@ -57,7 +66,7 @@ body {
     margin-bottom: 25px;
   }
   #text {
-    text-align: left;
+    text-align: center;
   }
 }
 
@@ -72,16 +81,15 @@ body {
 }
 
 .project  {
-  background: #2E2F30;
   margin-bottom: 30px;
-  position: relative;
-  border: 1px solid #2E2F30;
+  border: 1px solid #606060;
+  height: 100%;
   .overlay {
-    display: none;
-    position: absolute;
+    background: #2E2F30;
     color: #ffffff;
     padding: 50px 20px 0 20px;
     width: 100%;
+    height: 100%;
   }
   .company, .read-case-study {
     text-align: center;
@@ -91,12 +99,12 @@ body {
     font-size: 30px;
     margin-bottom: 20px;
   }
+    .brief-description {
+        text-align: center;
+        margin-bottom: 30px;
+    }
   .read-case-study {
     font-size: 20px;
-  }
-  .brief-description {
-    text-align: center;
-    margin-bottom: 20px;
   }
 }
 
@@ -104,6 +112,7 @@ body {
   padding: 40px 0 40px 0;
   p {
     margin-bottom: 30px;
+      text-align: center;
   }
 }
 
@@ -202,7 +211,7 @@ body {
     }
     .content-module-photo {
         margin-bottom: 30px;
-        border: 1px solid #2E2F30;
+        border: 1px solid #cccccc;
     }
 }
 
